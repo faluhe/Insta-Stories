@@ -42,6 +42,5 @@ struct MainView: View {
             StoryView()
                 .environmentObject(viewModel)
         )
-
     }
 }

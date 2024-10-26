@@ -24,7 +24,6 @@ struct TopProfileView: View {
                 .fontWeight(.bold)
                 .foregroundStyle(isBtnVisible ? .white : Color(UIColor.label))
 
-
             Spacer()
             //dismiss button
             if isBtnVisible {
@@ -38,11 +37,9 @@ struct TopProfileView: View {
                         .imageScale(.large)
                         .foregroundStyle(.white)
                         .opacity(isBtnVisible ? 1 : 0)
-                    
                 })
             }
-
         }
-            .padding()
+        .padding()
     }
 }

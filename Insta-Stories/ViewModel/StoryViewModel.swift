@@ -34,12 +34,12 @@ class StoryViewModel: ObservableObject {
     @Published var currentStory: String = ""
 
     func nextStoryID(currentID: String) -> String? {
-            guard let currentIndex = stories.firstIndex(where: { $0.id == currentID }), currentIndex + 1 < stories.count else { return nil }
-            return stories[currentIndex + 1].id
-        }
+        guard let currentIndex = stories.firstIndex(where: { $0.id == currentID }), currentIndex + 1 < stories.count else { return nil }
+        return stories[currentIndex + 1].id
+    }
 
-        func previousStoryID(currentID: String) -> String? {
-            guard let currentIndex = stories.firstIndex(where: { $0.id == currentID }), currentIndex - 1 >= 0 else { return nil }
-            return stories[currentIndex - 1].id
-        }
+    func previousStoryID(currentID: String) -> String? {
+        guard let currentIndex = stories.firstIndex(where: { $0.id == currentID }), currentIndex - 1 >= 0 else { return nil }
+        return stories[currentIndex - 1].id
+    }
 }

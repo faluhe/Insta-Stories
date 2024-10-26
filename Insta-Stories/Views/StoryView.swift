@@ -9,13 +9,13 @@ import SwiftUI
 
 struct StoryView: View {
     @EnvironmentObject var viewModel: StoryViewModel
-    
+
     @State private var offset = CGSize.zero
     @State private var fade: Bool = false
-    
+
     var body: some View {
-        
-        
+
+
         if viewModel.showStory {
             TabView(selection: $viewModel.currentStory) {
                 //stories
@@ -24,20 +24,20 @@ struct StoryView: View {
                         .environmentObject(viewModel)
                 }
             }
-            
-            
+
+
             .tabViewStyle(.page(indexDisplayMode: .never))
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(.black)
             .opacity(fade ? 0.3 : 1)
-            
+
             //dismissing
             .offset(y: offset.height)
             .simultaneousGesture(
                 DragGesture()
                     .onChanged { gesture in
                         guard gesture.translation.height > .zero else { return }
-                        
+
                         if gesture.translation.height > 20 {
                             withAnimation {
                                 offset = gesture.translation

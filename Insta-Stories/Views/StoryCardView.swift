@@ -120,7 +120,7 @@ struct StoryCardView: View {
     }
 
     //updating on End
-    func updateStory(forward: Bool = true) {
+    private func updateStory(forward: Bool = true) {
         withAnimation(.easeInOut) {
             if forward {
                 if let nextID = viewModel.nextStoryID(currentID: viewModel.currentStory) {
@@ -142,7 +142,7 @@ struct StoryCardView: View {
         }
     }
 
-    func getAngle(proxy: GeometryProxy) -> Angle {
+    private func getAngle(proxy: GeometryProxy) -> Angle {
         //converting offset into 45 deg
         let progress = proxy.frame(in: .global).minX / proxy.size.width
 
